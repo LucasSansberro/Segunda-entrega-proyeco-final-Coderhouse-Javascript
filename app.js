@@ -58,7 +58,7 @@ function botonAddCarrito (eleccion) {
 				carrito.push(item)
 				listaCarrito.innerHTML = carrito.join("</br>")
 				precioFinal = precioFinal + Number(item.match(/(\d+)/g))
-				textoPrecioFinal.innerHTML = `Precio final $:${precioFinal}`
+				textoPrecioFinal.innerHTML = `Precio final: $${precioFinal}`
 			}
 			else{
 				alert("Lo sentimos, solo aceptamos hasta 12 productos. Para compras mayoristas, por favor contáctenos a través de un correo electrónico")
@@ -74,7 +74,7 @@ botonEliminar.addEventListener("click", function(){
 	precioFinal = precioFinal - Number(carrito[carrito.length-1].match(/(\d+)/g))
 	carrito.pop()
 	listaCarrito.innerHTML = carrito.join("</br>")
-	textoPrecioFinal.innerHTML = `Precio final $:${precioFinal}`
+	textoPrecioFinal.innerHTML = `Precio final: $${precioFinal}`
 	})
 
 //Botón para ordenar de menor a mayor

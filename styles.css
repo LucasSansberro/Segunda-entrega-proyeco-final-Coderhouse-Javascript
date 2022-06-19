@@ -286,6 +286,79 @@ footer {
   transition: all 0.3s;
 }
 
+/* JavaScript */
+
+.listaCarrito {
+	list-style: none;
+	font-size: 1.25em;
+	padding: 0px;
+	margin-top: 30px;
+}
+
+.botonDeScript {
+	background: none;
+	border: none;
+	font: inherit;
+}
+
+/* Cuadro para Scripts */
+
+.cuadroScripts {
+	margin-top: 50px;
+  	padding: 20px;
+  	background-color: #E4AF8E;
+  	overflow: hidden;
+  	width: 50%;
+}
+
+.cuadroCarrito {
+	border: 1px solid black;
+	height: 400px;
+	overflow: hidden;
+}
+
+.divBotonesScript { 
+	display:flex;
+	flex-direction: column;
+	justify-content: space-evenly; 
+}
+
+.botonEliminar{
+	font: inherit;
+}
+
+.estiloPrecio {
+	height: 34px;
+	padding-top: 5px
+}
+
+.botonDeEnvio {
+	height: 34px;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.animacion-botonDeEnvio {
+  height: 34px;
+  transition: all 0.2s ease-in-out;
+}
+
+.texto-botonDeEnvio {
+  display: block;
+  margin-top: 5px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.animacion-botonDeEnvio:hover {
+  transform: translate3d(0px, -29px, 0px);
+}
+
+@media (hover: none) {
+  .fa-paper-plane {
+    display: none;
+  }}
+
 /*reparacion.html y maquetado.html - Media Query */
 @media only screen and (max-width: 1200px) {
   .titulo-reparacion-maquetado {
@@ -316,7 +389,9 @@ footer {
     padding-left: 0px;
     padding-right: 0px;
   }
-
+.cuadroScripts{width:95%}
+.cuadroCarrito {height: 275px}
+.listaCarrito{font-size: 0.85em;margin-top: 10px;}
   .caja-oferta ul {
     padding-left: 15px;
   }
@@ -368,75 +443,9 @@ footer {
     text-align: center;
     font-size: 2em;
   }
+  .cuadroScripts {width: 65%}
 }
+
+.botonesDiv{margin-top: 10px}
 
 /*reparacion.html y maquetado.html*/
-
-/* JavaScript */
-
-.listaCarrito {
-	list-style: none;
-	font-size: 1.25em;
-	padding: 0px;
-	margin-top: 30px;
-}
-
-.botonDeScript {
-	background: none;
-	border: none;
-	font: inherit;
-}
-
-/* Cuadro para Scripts */
-
-.cuadroScripts {
-	margin-top: 50px;
-  	padding: 20px;
-  	background-color: #E4AF8E;
-  	overflow: hidden;
-  	width: 50%;
-}
-
-.cuadroCarrito {
-	border: 1px solid black;
-	height: 400px;
-	overflow: hidden;
-}
-
-.divBotonesScript { 
-	display:flex;
-	flex-direction: column;
-	justify-content: space-evenly; 
-}
-
-.botonEliminar{
-	font: inherit;
-}
-.estiloPrecio {height: 34px;
-padding-top: 5px}
-.botonDeEnvio {
-	height: 34px;
-  overflow: hidden;
-  transition: all 0.2s ease-in-out;
-}
-
-.animacion-botonDeEnvio {
-  height: 34px;
-  transition: all 0.2s ease-in-out;
-}
-
-.texto-botonDeEnvio {
-  display: block;
-  margin-top: 5px;
-  letter-spacing: 2px;
-  font-weight: bold;
-}
-
-.animacion-botonDeEnvio:hover {
-  transform: translate3d(0px, -29px, 0px);
-}
-
-@media (hover: none) {
-  .fa-paper-plane {
-    display: none;
-  }}
