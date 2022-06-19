@@ -54,12 +54,32 @@ function botonAddCarrito (eleccion) {
 	for (const item of eleccion){
 		let eventos = document.getElementById(item)
 		eventos.addEventListener("click", function(){
-			carrito.push(item)
-			carrito.sort((a, b) => (Number(a.match(/(\d+)/g)) - Number((b.match(/(\d+)/g)))))
-			listaCarrito.innerHTML = carrito.join("</br>")
-			precioFinal = precioFinal + Number(item.match(/(\d+)/g))
+			if (carrito.length < 12){
+				carrito.push(item)
+				listaCarrito.innerHTML = carrito.join("</br>")
+				precioFinal = precioFinal + Number(item.match(/(\d+)/g))
+				textoPrecioFinal.innerHTML = `Precio final $:${precioFinal}`
+			}
+			else{
+				alert("Lo sentimos, solo aceptamos hasta 12 productos. Para compras mayoristas, por favor contáctenos a través de un correo electrónico")
+			}
 		})
 	}
 }
 botonAddCarrito(rustica) ; botonAddCarrito(cartone) ; botonAddCarrito(cuero)
+
+//Botón para eliminar último en lista
+botonEliminar.addEventListener("click", function(){
+	if (carrito !="")
+	precioFinal = precioFinal - Number(carrito[carrito.length-1].match(/(\d+)/g))
+	carrito.pop()
+	listaCarrito.innerHTML = carrito.join("</br>")
+	textoPrecioFinal.innerHTML = `Precio final $:${precioFinal}`
+	})
+
+//Botón para ordenar de menor a mayor
+botonOrdenador.addEventListener("click", function(){
+	carrito.sort((a, b) => (Number(a.match(/(\d+)/g)) - Number((b.match(/(\d+)/g)))))
+	listaCarrito.innerHTML = carrito.join("</br>")
+	})
 

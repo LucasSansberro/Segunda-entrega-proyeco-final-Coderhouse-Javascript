@@ -74,14 +74,21 @@
 			</div>
 		</div>
 
-		<div class="container cuadroScripts">
-  			<div class="row justify-content-around">
-  				<div class="col-6 col-lg-6 cuadroCarrito">
-  					<ul id="listaCarrito" class=" listaCarrito col-lg-6">
+		<div class="container-sm cuadroScripts">
+  			<div class="row justify-content-between">
+  				<div class="col-5 cuadroCarrito">
+  					<ul id="listaCarrito" class=" listaCarrito">
   						<!-- Entra li por JS -->
   					</ul>
   				</div>
-  				<div class="col-6 col-lg-4 divBotonesScript">
+  				<div class="col-7 divBotonesScript justify-content-around">
+  					<p id="textoPrecioFinal" class="text-center crema estiloPrecio">Precio final $0</p>
+  					<button class="btn crema col-12 botonEliminar" id="botonEliminar">
+  						<span>Eliminar última entrada</span>
+  					</button>
+  					<button class="btn crema col-12 botonEliminar" id="botonOrdenador">
+  						<span>Ordenar por precio de menor a mayor</span>
+  					</button>
     				<form id="contact-form" role="form">
       					<button class="btn crema botonDeEnvio col-12" id="submit" type="submit" value="SEND">
         					<div class="animacion-botonDeEnvio">

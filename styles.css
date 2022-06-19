@@ -373,59 +373,12 @@ footer {
 /*reparacion.html y maquetado.html*/
 
 /* JavaScript */
-.divListaPrecios{
-	display:flex;
-	justify-content:space-evenly;
-}
-
-.cuadroListaPrecio {
-	border: black 1px solid;
-	padding:20px;
-	 list-style:none;
-}
-
-.itemListaPrecio{
-	padding: 10px;
-}
-
-.divResultados {
-	display:flex;
-	justify-content:space-evenly;
-}
-
-.divCarrito {
-	border: black 1px solid;
-	width:25%;
-	border-radius:20px;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-}
-
-.divBotones {
-	border: black 1px solid;
-	padding:20px;
-	width:25%;
-	border-radius:20px;
-	height:75px;
-	display:flex;
-	flex-direction:column;
-	justify-content:space-between;
-	align-items: center;
-}
-
-.divPrecioFinal {
-	border: black 1px solid;
-	width:25%;
-	border-radius:20px;
-	height:100px;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-}
 
 .listaCarrito {
 	list-style: none;
+	font-size: 1.25em;
+	padding: 0px;
+	margin-top: 30px;
 }
 
 .botonDeScript {
@@ -441,11 +394,13 @@ footer {
   	padding: 20px;
   	background-color: #E4AF8E;
   	overflow: hidden;
+  	width: 50%;
 }
 
 .cuadroCarrito {
 	border: 1px solid black;
 	height: 400px;
+	overflow: hidden;
 }
 
 .divBotonesScript { 
@@ -454,6 +409,11 @@ footer {
 	justify-content: space-evenly; 
 }
 
+.botonEliminar{
+	font: inherit;
+}
+.estiloPrecio {height: 34px;
+padding-top: 5px}
 .botonDeEnvio {
 	height: 34px;
   overflow: hidden;
