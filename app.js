@@ -9,22 +9,22 @@ class TipoDeReparacion {
 }
 
 const rusticaObjeto = new TipoDeReparacion (
-	{nombre: "Restauración de portada $" , precio: 600},
-	{nombre: "Encolado de lomo $" , precio: 1200},
-	{nombre: "Limpieza $" , precio: 300},
-	{nombre: "Pegado de páginas $" , precio: 2000})
+	{nombre: "Restauración de portada: $" , precio: 600},
+	{nombre: "Encolado de lomo: $" , precio: 1200},
+	{nombre: "Limpieza: $" , precio: 300},
+	{nombre: "Pegado de páginas: $" , precio: 2000})
 
 const cartoneObjeto = new TipoDeReparacion (
-	{nombre: "Restauración de portada $" , precio: 2000},
-	{nombre: "Encolado de lomo $" , precio: 5000},
-	{nombre: "Limpieza $" , precio: 1500},
-	{nombre: "Pegado de páginas $" , precio: 7000})
+	{nombre: "Restauración de portada: $" , precio: 2000},
+	{nombre: "Encolado de lomo: $" , precio: 5000},
+	{nombre: "Limpieza: $" , precio: 1500},
+	{nombre: "Pegado de páginas: $" , precio: 7000})
 
 const cueroObjeto = new TipoDeReparacion (
-	{nombre: "Restauración de portada $" , precio: 15000},
-	{nombre: "Reemplazo de tarlatana $" , precio: 10000},
-	{nombre: "Limpieza $" , precio: 8000},
-	{nombre: "Restauración de páginas $" , precio: 9000})
+	{nombre: "Restauración de portada: $" , precio: 15000},
+	{nombre: "Reemplazo de tarlatana: $" , precio: 10000},
+	{nombre: "Limpieza: $" , precio: 8000},
+	{nombre: "Restauración de páginas: $" , precio: 9000})
 
 //Colocamos los datos de los objetos dentro de arrays para facilitar su manipulación en el DOM. De esta
 //manera combinamos la facilidad que tienen los objetos para acciones tales como cambiar el precio mediante método
@@ -70,12 +70,13 @@ botonAddCarrito(rustica) ; botonAddCarrito(cartone) ; botonAddCarrito(cuero)
 
 //Botón para eliminar último en lista
 botonEliminar.addEventListener("click", function(){
-	if (carrito !="")
-	precioFinal = precioFinal - Number(carrito[carrito.length-1].match(/(\d+)/g))
-	carrito.pop()
-	listaCarrito.innerHTML = carrito.join("</br>")
-	textoPrecioFinal.innerHTML = `Precio final: $${precioFinal}`
-	})
+	if (carrito !=""){
+		precioFinal = precioFinal - Number(carrito[carrito.length-1].match(/(\d+)/g))
+		carrito.pop()
+		listaCarrito.innerHTML = carrito.join("</br>")
+		textoPrecioFinal.innerHTML = `Precio final: $${precioFinal}`
+	}
+})
 
 //Botón para ordenar de menor a mayor
 botonOrdenador.addEventListener("click", function(){

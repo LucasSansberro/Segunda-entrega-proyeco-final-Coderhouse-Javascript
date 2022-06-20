@@ -245,6 +245,13 @@ footer {
   font-weight: bold;
 }
 
+/* Asset de internet / cssbuttons.io by @martinval9 */
+.card {
+  box-shadow: 4px 6px 14px #2F2F42;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+
 .card-title {
   font-weight: bold;
 }
@@ -271,37 +278,13 @@ footer {
   height: 300px;
 }
 
-.ofertas-fin {
-  padding-top: 25px;
-  padding-bottom: 25px;
-  text-align: center;
-  font-size: 2em;
-  margin-bottom: 0px;
-}
-
-/* Asset de internet / cssbuttons.io by @martinval9 */
-.card {
-  box-shadow: 4px 6px 14px #2F2F42;
-  border-radius: 3px;
-  transition: all 0.3s;
-}
-
-/* JavaScript */
-
-.listaCarrito {
-	list-style: none;
-	font-size: 1.25em;
-	padding: 0px;
-	margin-top: 30px;
-}
+/* Elementos de JavaScript */
 
 .botonDeScript {
 	background: none;
 	border: none;
 	font: inherit;
 }
-
-/* Cuadro para Scripts */
 
 .cuadroScripts {
 	margin-top: 50px;
@@ -317,17 +300,28 @@ footer {
 	overflow: hidden;
 }
 
+.listaCarrito {
+	list-style: none;
+	font-size: 1.25em;
+	padding: 0px;
+	margin-top: 20px;
+}
+
 .divBotonesScript { 
 	display:flex;
 	flex-direction: column;
 	justify-content: space-evenly; 
 }
 
+.botonesDiv{
+	margin-top: 10px
+}
+
 .botonEliminar{
 	font: inherit;
 }
 
-.estiloPrecio {
+.estiloTextoPrecio {
 	height: 34px;
 	padding-top: 5px
 }
@@ -359,6 +353,16 @@ footer {
     display: none;
   }}
 
+/*Elementos JS - Fin */
+
+.ofertas-fin {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 0px;
+}
+
 /*reparacion.html y maquetado.html - Media Query */
 @media only screen and (max-width: 1200px) {
   .titulo-reparacion-maquetado {
@@ -389,9 +393,7 @@ footer {
     padding-left: 0px;
     padding-right: 0px;
   }
-.cuadroScripts{width:95%}
-.cuadroCarrito {height: 275px}
-.listaCarrito{font-size: 0.85em;margin-top: 10px;}
+
   .caja-oferta ul {
     padding-left: 15px;
   }
@@ -400,16 +402,26 @@ footer {
     height: 200px;
   }
 
+  .cuadroScripts{
+ 	width:95%
+  } 
+  .cuadroCarrito {
+ 	height: 275px
+  }
+	
+  .listaCarrito{
+	font-size: 0.85em;
+	margin-top: 10px;
+  }
+
   .ofertas-fin {
     text-align: center;
     font-size: 1.25em;
   }
-
-  .card:hover {
-    margin-top: 0px;
-  }
 }
+
 @media only screen and (min-width: 768px) and (max-width: 1200px) {
+ 
   .titulo-reparacion-maquetado {
     font-size: 2.5em;
   }
@@ -443,9 +455,10 @@ footer {
     text-align: center;
     font-size: 2em;
   }
-  .cuadroScripts {width: 65%}
-}
 
-.botonesDiv{margin-top: 10px}
+  .cuadroScripts {
+  	width: 65%
+  }
+}
 
 /*reparacion.html y maquetado.html*/
