@@ -1,1 +1,1 @@
-# Segunda entrega proyeco final - Coderhouse Javascript
+# Segunda entrega proyecto final - Coderhouse Javascript
