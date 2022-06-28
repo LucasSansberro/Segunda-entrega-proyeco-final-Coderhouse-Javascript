@@ -296,7 +296,7 @@ footer {
 
 .cuadroCarrito {
 	border: 1px solid black;
-	height: 400px;
+	min-height: 400px;
 	overflow: hidden;
 }
 
@@ -342,6 +342,16 @@ footer {
   margin-top: 5px;
   letter-spacing: 2px;
   font-weight: bold;
+}
+
+.textoListaCarrito{
+	display: inline
+}
+
+.botonEliminador {
+	width: 50px;
+	font-size: 20px;
+	font: inherit
 }
 
 .animacion-botonDeEnvio:hover {
