@@ -46,7 +46,7 @@ for (let i = 0; i < opcionesDeReparacion.length; i++) {
 function mirror () {
   let items = "";
   carrito.forEach((item, i) => {
-    items += `<li class="d-flex justify-content-between"><p class="textoListaCarrito">${item.nombre} ${item.precio}</p>
+    items += `<li class="d-flex justify-content-between"><p class="textoListaCarrito">${item.categoria} | ${item.nombre} ${item.precio}</p>
     <button class="botonEliminador crema"onclick="botonEliminador(${item.id},${item.precio})"> X </button></li>`;
   })
   if (carrito !=""){
