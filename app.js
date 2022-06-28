@@ -1,5 +1,4 @@
-//Construimos la clase y una función para armonizar la introducción de los objetos dentro del array.
-//Por la misma razón, utilizamos variables.
+//Construimos la clase, un array y sus objetos
 class TipoDeReparacion {
   constructor (id, nombre, precio, categoria){
     this.id = parseInt(id)
@@ -42,29 +41,25 @@ for (let i = 0; i < opcionesDeReparacion.length; i++) {
   }
 }
 
-//Recorremos cada componente del carrito y se lo agregamos a items para luego meterlo en listaCarrito
-  //Le pasamos una funcion para que lea el id del producto y lo elimine si le hacemos click al texto
-  //la idea es poner un boton al lado y cambiar al funcion a ese boton
+//Creamos una función que recorra cada elemento del carrito para meterlo dentro del HTML. A su vez, mantiene actualizado
+//el localStorage en función de los items que se encuentren en el carrito
 function mirror () {
+  let items = "";
+  carrito.forEach((item, i) => {
+    items += `<li class="d-flex justify-content-between"><p class="textoListaCarrito">${item.nombre} ${item.precio}</p>
+    <button class="botonEliminador crema"onclick="botonEliminador(${item.id},${item.precio})"> X </button></li>`;
+  })
   if (carrito !=""){
-    let items = "";
-    carrito.forEach((item, i) => {
-      items += `<li class="d-flex justify-content-between"><p class="textoListaCarrito">${item.nombre} ${item.precio}</p>
-      <button class="botonEliminador crema"onclick="botonEliminador(${item.id},${item.precio})"> X </button></li>`;
-    })
     listaCarrito.innerHTML = items;
-    textoPrecioFinal.innerHTML = `Precio final: $${precioFinal}`;
-    localStorage.setItem("Carrito", JSON.stringify(carrito));
-    localStorage.setItem("Precio Final", JSON.stringify(precioFinal));}
-  else { 
-    listaCarrito.innerHTML = carrito;
-    textoPrecioFinal.innerHTML = `Precio final: $${precioFinal}`;
-    localStorage.setItem("Carrito", JSON.stringify(carrito));
-    localStorage.setItem("Precio Final", JSON.stringify(precioFinal));
   }
-};
+  else{
+    listaCarrito.innerHTML = carrito;
+  }
+  textoPrecioFinal.innerHTML = `Precio final: $${precioFinal}`;
+  localStorage.setItem("Carrito", JSON.stringify(carrito));
+  localStorage.setItem("Precio Final", JSON.stringify(precioFinal));}
 
-//Definición de elementos y carga mediante Storage si es que está disponible
+//Definición de elementos y carga mediante localStorage si es que está disponible
 let carrito = JSON.parse(localStorage.getItem("Carrito"));
 let precioFinal = JSON.parse(localStorage.getItem("Precio Final"));
 if (carrito == null) {
@@ -75,6 +70,7 @@ else {
   mirror()
 }
 
+//Función para eliminar elementos del carrito de forma individual
 const botonEliminador = (id, precio) => {
   let idx = carrito.findIndex(p => p.id==id);
   let resta = carrito.find(p=>p.precio==precio)
@@ -83,7 +79,8 @@ const botonEliminador = (id, precio) => {
   mirror();
 };
 
-//Agregamos funcionalidad a los botones en el paso anterior
+//Agregamos funcionalidad a los botones del listado, para que el usuario pueda agregar
+//los productos que desee al carrito
 for (const item of opcionesDeReparacion) {
   let eventos = document.getElementById(item.id);
   eventos.addEventListener("click", function () {
@@ -100,7 +97,7 @@ for (const item of opcionesDeReparacion) {
   });
 }
 
-//Botón para eliminar último en lista
+//Botón para vaciar el carrito
 botonVaciador.addEventListener("click", function () {
   if (carrito != "") {
     carrito = []
@@ -108,7 +105,6 @@ botonVaciador.addEventListener("click", function () {
     mirror()
   }
 });
-
 
 //Botón para ordenar de menor a mayor
 botonOrdenador.addEventListener("click", function () {
